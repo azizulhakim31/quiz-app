@@ -4,12 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz</title>
+    <title>Quiz Mania</title>
     <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/5692/5692030.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <main>
+        <h1>Quiz Mania</h1>
+        <h2 class="sub_tiitle">Test your knowledge</h2>
+
+        <div class="form_group">
+            <label for="dfficulty">Difficulty</label>
+            <select id="dfficulty">
+                <option value="" selected disabled> --Select-- </option>
+                <option value="">Easy</option>
+                <option value="">Medium</option>
+                <option value="">Hard</option>
+            </select>
+        </div>
+
+        <div class="form_group">
+            <label for="amount">Number of Questions</label>
+            <select id="amount">
+                <option value="" selected disabled> --Select-- </option>
+                <option value="">5 Questions</option>
+                <option value="">10 Questions</option>
+                <option value="">15 Questions</option>
+                <option value="">20 Questions</option>
+            </select>
+        </div>
+
+        <div class="form_group">
+            <label for="category">Category</label>
+            <select id="category">
+                <option value="" selected disabled> --Select-- </option>
+                <option value="">Any Category</option>
+                <option value="">General Knowledge</option>
+                <option value="">Science</option>
+                <option value="">Computers</option>
+                <option value="">Mathematics</option>
+                <option value="">Sports</option>
+                <option value="">History</option>
+                <option value="">Animals</option>
+            </select>
+        </div>
+
+        <button type="button" class="primary_btn">Start Quiz</button>
+    </main>
 
 
     <script src="/script.js"></script>
