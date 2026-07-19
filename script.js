@@ -165,8 +165,31 @@ function disableAnswer() {
         btn.classList.add("disabled"));
 };
 
-// 
+// display results
+function displayResult() {
+    clearInterval(timer);
+    showScreen(quizScreen, false);
+    showScreen(resultScreen, true);
+    scoreDisplay.textContent = score;
 
-
+    const percentage = Math.round((score / questions.length) * 100);
+    message.textContent = percentage >= 80
+        ? "Excellent! Amazing performance!"
+        : percentage >= 50
+            ? "Good job! Keep practicing."
+            : "Keep learning and try again.";
+};
 
 startBtn.onclick = startQuiz;
+
+nextBtn.onclick = () => {
+    currentQuestion += 1;
+
+    if (currentQuestion < question.length) {
+        showQuestion();
+    } else {
+        displayResult();
+    }
+};
+
+restartBtn.onclick = () => location.reload();

@@ -19,8 +19,8 @@
             <p class="sub_title">Test your knowledge</p>
 
             <div class="form_group">
-                <label for="dfficulty">Difficulty</label>
-                <select id="dfficulty">
+                <label for="difficulty"></label>
+                <select id="difficulty">
                     <option value="" selected disabled> --Select-- </option>
                     <option value="">Easy</option>
                     <option value="">Medium</option>
@@ -57,6 +57,12 @@
             <button type="button" id="start_btn" class="primary_btn">Start Quiz</button>
         </section>
 
+        <!-- loading screen section -->
+        <section id="loadingScreen" class="card hidden">
+            <div class="loader"></div>
+            <h2>Preparing Quiz</h2>
+        </section>
+
         <!-- quiz screen section -->
         <section id="quiz_screen" class="card hidden">
             <div class="top_bar">
@@ -87,7 +93,7 @@
         <section id="result_screen" class="card hidden">
             <h1>Finished!</h1>
             <h2>Your Score</h2>
-            
+
             <div class="score">
                 <span id="score">0</span> / <span id="total">10</span>
             </div>
