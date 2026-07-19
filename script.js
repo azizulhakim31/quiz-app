@@ -108,4 +108,21 @@ function showQuestion() {
     questionCounter.textContent = `Question ${currentQuestion + 1}/${questions.length}`;
     progressBar.style.width = `${((currentQuestion + 1) / questions.length) * 100}%`;
     questionText.innerHTML = decodeHTML(current.question);
-}
+
+    createAnswers(current);
+    nextBtn.classList.add("hidden");
+    startTimer();
+};
+
+// create answer-btn dynamically
+function createAnswers(question) {
+    answerBox.innerHTML = "";
+
+    const answer = [...question.incorrect_answers, question.correct_answer].map((answer) => decodeHTML(answer)).sort(() => Math.random() - 0.5);
+
+    answer.forEach((answer) => {
+        const button = document.createElement("button");
+        button.className = "answer_btn";
+        button.innerHTML = answer;
+    })
+};

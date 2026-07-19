@@ -85,3 +85,34 @@ select {
     transform: translateY(-4px);
     box-shadow: 0 15px 35px rgba(35, 95, 230, .6);
 }
+
+.top_bar {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+#timer {
+    color: rgb(247, 247, 26)
+}
+
+.progress_container {
+    height: 12px;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+#progress_bar {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #22c55e, #3b82f6);
+    transition: 0.4s;
+}
+
+.answer {
+    display: grid;
+    gap: 15px;
+}
