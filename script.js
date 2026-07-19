@@ -124,5 +124,49 @@ function createAnswers(question) {
         const button = document.createElement("button");
         button.className = "answer_btn";
         button.innerHTML = answer;
-    })
+        button.onclick = () => checkAnswer(button, question.correct_answer);
+        answerBox.appendChild(button);
+    });
 };
+
+// check correct answer
+function checkAnswer(button, correctAnswer) {
+    clearInterval(timer);
+    document.querySelectorAll(".answer_btn").forEach((btn) => btn.classList.add("disabled"));
+
+    const chosenText = decodeHTML(button.textContent);
+    const rightText = decodeHTML(correctAnswer);
+
+    if (chosenText === rightText) {
+        button.classList.add("correct");
+        score += 1;
+    } else {
+        button.classList.add("wrong");
+        showCorrectAnswer();
+    }
+
+    nextBtn.classList.remove("hidden");
+};
+
+// highlight correct answer
+function showCorrectAnswer() {
+    const correctAnswer = decodeHTML(questions[currentQuestion].correct_answer);
+
+    document.querySelectorAll(".answer_btn").forEach((btn) => {
+        if (decodeHTML(btn.textContent) === correctAnswer) {
+            btn.classList.add("correct");
+        }
+    });
+};
+
+// disable all answer
+function disableAnswer() {
+    document.querySelectorAll(".answer_btn").forEach((btn) =>
+        btn.classList.add("disabled"));
+};
+
+// 
+
+
+
+startBtn.onclick = startQuiz;

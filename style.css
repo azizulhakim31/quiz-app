@@ -75,7 +75,7 @@ select {
     cursor: pointer;
     font-size: 16px;
     font-weight: 700;
-    background: linear-gradient(130deg, rgb(168, 107, 185), rgb(193, 90, 202));
+    background: linear-gradient(130deg, rgb(168, 118, 195), rgb(193, 90, 202));
     color: #fff;
     transition: .3s;
     box-shadow: 0 15px 35px rgba(35, 95, 230, .4);
@@ -109,10 +109,61 @@ select {
     height: 100%;
     width: 0;
     background: linear-gradient(90deg, #22c55e, #3b82f6);
-    transition: 0.4s;
+    transition: 0.4s
 }
 
 .answer {
     display: grid;
     gap: 15px;
+}
+
+.answer_btn {
+    padding: 15px;
+    border-radius: 15px;
+    border: none;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    color: #fff;
+    text-align: left;
+    font-size: 16px;
+    transition: 0.25s
+}
+
+.answer_btn:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: translateX(5px);
+}
+
+.correct {
+    background: rgb(13, 212, 13);
+}
+
+.wrong {
+    background: rgb(248, 17, 17);
+}
+
+.disabled {
+    pointer-events: none;
+}
+
+.score {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 700;
+    color: rgb(237, 210, 3)
+}
+
+.message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 20px;
+}
+
+.hidden {
+    display: none;
+}
+
+h2 {
+    text-align: center;
+    color: white;
 }
