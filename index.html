@@ -11,47 +11,88 @@
 
 <body>
     <div class="background"></div>
-    <main class="quiz_card">
-        <h1>Quiz Mania</h1>
-        <h2 class="sub_title">Test your knowledge</h2>
+    <main class="quiz_body">
 
-        <div class="form_group">
-            <label for="dfficulty">Difficulty</label>
-            <select id="dfficulty">
-                <option value="" selected disabled> --Select-- </option>
-                <option value="">Easy</option>
-                <option value="">Medium</option>
-                <option value="">Hard</option>
-            </select>
-        </div>
+        <!-- setup screen section -->
+        <section id="setup_screen" class="card">
+            <h1>Quiz Mania</h1>
+            <p class="sub_title">Test your knowledge</p>
 
-        <div class="form_group">
-            <label for="amount">Number of Questions</label>
-            <select id="amount">
-                <option value="" selected disabled> --Select-- </option>
-                <option value="">5 Questions</option>
-                <option value="">10 Questions</option>
-                <option value="">15 Questions</option>
-                <option value="">20 Questions</option>
-            </select>
-        </div>
+            <div class="form_group">
+                <label for="dfficulty">Difficulty</label>
+                <select id="dfficulty">
+                    <option value="" selected disabled> --Select-- </option>
+                    <option value="">Easy</option>
+                    <option value="">Medium</option>
+                    <option value="">Hard</option>
+                </select>
+            </div>
 
-        <div class="form_group">
-            <label for="category">Category</label>
-            <select id="category">
-                <option value="" selected disabled> --Select-- </option>
-                <option value="">Any Category</option>
-                <option value="">General Knowledge</option>
-                <option value="">Science</option>
-                <option value="">Computers</option>
-                <option value="">Mathematics</option>
-                <option value="">Sports</option>
-                <option value="">History</option>
-                <option value="">Animals</option>
-            </select>
-        </div>
+            <div class="form_group">
+                <label for="amount">Number of Questions</label>
+                <select id="amount">
+                    <option value="" selected disabled> --Select-- </option>
+                    <option value="">5 Questions</option>
+                    <option value="">10 Questions</option>
+                    <option value="">15 Questions</option>
+                    <option value="">20 Questions</option>
+                </select>
+            </div>
 
-        <button type="button" class="primary_btn">Start Quiz</button>
+            <div class="form_group">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="" selected disabled> --Select-- </option>
+                    <option value="">Any Category</option>
+                    <option value="">General Knowledge</option>
+                    <option value="">Science</option>
+                    <option value="">Computers</option>
+                    <option value="">Mathematics</option>
+                    <option value="">Sports</option>
+                    <option value="">History</option>
+                    <option value="">Animals</option>
+                </select>
+            </div>
+
+            <button type="button" id="start_btn" class="primary_btn">Start Quiz</button>
+        </section>
+
+        <!-- quiz screen section -->
+        <section id="quiz_screen" class="card hidden">
+            <div class="top_bar">
+                <span id="question_counter">
+                    Question 1/10
+                </span>
+                <span id="timer">
+                    ⏱ 15
+                </span>
+            </div>
+
+            <div class="progress_container">
+                <div id="progress_bar"></div>
+            </div>
+
+            <h2 id="question">
+                Question goes here
+            </h2>
+
+            <div id="answers" class="answers">
+
+            </div>
+
+            <button type="button" id="next_btn" class="primary_btn hidden">Next Question →</button>
+        </section>
+
+        <!-- result screen section -->
+        <section id="result_screen" class="card hidden">
+            <h1>Finished!</h1>
+            <h2>Your Score</h2>
+            <div class="score">
+                <span id="score">0</span> / <span id="total">10</span>
+            </div>
+            <p id="message"></p>
+            <button type="button" id="restart_btn" class="primary_btn">Play Again</button>
+        </section>
     </main>
 
 
