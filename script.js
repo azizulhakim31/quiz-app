@@ -1,6 +1,7 @@
 const API_URL = "https://opentdb.com/api.php";
 
 const setupScreen = document.getElementById("setup_screen");
+const loadingScreen = document.getElementById("loading_screen");
 const quizScreen = document.getElementById("quiz_screen");
 const resultScreen = document.getElementById("result_screen");
 
@@ -13,7 +14,7 @@ const amount = document.getElementById("amount");
 const category = document.getElementById("category");
 
 const questionText = document.getElementById("question");
-const answerBox = document.getElementById("answer");
+const answerBox = document.getElementById("answers");
 const questionCounter = document.getElementById("question_counter");
 const progressBar = document.getElementById("progress_bar");
 const timerDisplay = document.getElementById("timer");
@@ -68,6 +69,7 @@ function startTimer() {
 // fetch & start quiz
 async function startQuiz() {
     showScreen(setupScreen, false);
+    showScreen(loadingScreen, true);
 
     const params = new URLSearchParams({
         amount: amount.value,
@@ -83,17 +85,18 @@ async function startQuiz() {
         const response = await fetch(`${API_URL}?${params}`);
         const data = await response.json();
 
-        if (!data.result?.length) {
-            alert("No questions found. Try another option");
+        if (!data.results?.length) {
+            alert("No questions found. Try another option.");
             location.reload();
             return;
         }
 
-        question = data.results;
+        questions = data.results;
         score = 0;
         currentQuestion = 0;
+        showScreen(loadingScreen, false);
         showScreen(quizScreen, true);
-        totalDisplay.textContent = question.length;
+        totalDisplay.textContent = questions.length;
         showQuestion();
     } catch (error) {
         alert("Failed to load quiz.")
@@ -118,9 +121,11 @@ function showQuestion() {
 function createAnswers(question) {
     answerBox.innerHTML = "";
 
-    const answer = [...question.incorrect_answers, question.correct_answer].map((answer) => decodeHTML(answer)).sort(() => Math.random() - 0.5);
+    const answers = [...question.incorrect_answers, question.correct_answer]
+        .map((answer) => decodeHTML(answer))
+        .sort(() => Math.random() - 0.5);
 
-    answer.forEach((answer) => {
+    answers.forEach((answer) => {
         const button = document.createElement("button");
         button.className = "answer_btn";
         button.innerHTML = answer;
@@ -160,7 +165,7 @@ function showCorrectAnswer() {
 };
 
 // disable all answer
-function disableAnswer() {
+function disableAnswers() {
     document.querySelectorAll(".answer_btn").forEach((btn) =>
         btn.classList.add("disabled"));
 };
@@ -185,7 +190,7 @@ startBtn.onclick = startQuiz;
 nextBtn.onclick = () => {
     currentQuestion += 1;
 
-    if (currentQuestion < question.length) {
+    if (currentQuestion < questions.length) {
         showQuestion();
     } else {
         displayResult();

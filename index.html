@@ -19,12 +19,12 @@
             <p class="sub_title">Test your knowledge</p>
 
             <div class="form_group">
-                <label for="difficulty"></label>
+                <label for="difficulty">Difficulty</label>
                 <select id="difficulty">
                     <option value="" selected disabled> --Select-- </option>
-                    <option value="">Easy</option>
-                    <option value="">Medium</option>
-                    <option value="">Hard</option>
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
                 </select>
             </div>
 
@@ -32,10 +32,11 @@
                 <label for="amount">Number of Questions</label>
                 <select id="amount">
                     <option value="" selected disabled> --Select-- </option>
-                    <option value="">5 Questions</option>
-                    <option value="">10 Questions</option>
-                    <option value="">15 Questions</option>
-                    <option value="">20 Questions</option>
+                    <option value="5">5 Questions</option>
+                    <option value="10">10 Questions</option>
+                    <option value="15">15 Questions</option>
+                    <option value="20">20 Questions</option>
+                </select>
                 </select>
             </div>
 
@@ -44,13 +45,13 @@
                 <select id="category">
                     <option value="" selected disabled> --Select-- </option>
                     <option value="">Any Category</option>
-                    <option value="">General Knowledge</option>
-                    <option value="">Science</option>
-                    <option value="">Computers</option>
-                    <option value="">Mathematics</option>
-                    <option value="">Sports</option>
-                    <option value="">History</option>
-                    <option value="">Animals</option>
+                    <option value="9">General Knowledge</option>
+                    <option value="17">Science</option>
+                    <option value="18">Computers</option>
+                    <option value="19">Mathematics</option>
+                    <option value="21">Sports</option>
+                    <option value="23">History</option>
+                    <option value="27">Animals</option>
                 </select>
             </div>
 
@@ -58,9 +59,9 @@
         </section>
 
         <!-- loading screen section -->
-        <section id="loadingScreen" class="card hidden">
+        <section id="loading_screen" class="card hidden">
             <div class="loader"></div>
-            <h2>Preparing Quiz</h2>
+            <h2>Preparing Quiz ...</h2>
         </section>
 
         <!-- quiz screen section -->
@@ -95,7 +96,7 @@
             <h2>Your Score</h2>
 
             <div class="score">
-                <span id="score">0</span> / <span id="total">10</span>
+                <span id="score">0</span>/<span id="total">10</span>
             </div>
             <p id="message"></p>
 
@@ -104,7 +105,7 @@
     </main>
 
 
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

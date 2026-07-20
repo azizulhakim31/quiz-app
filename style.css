@@ -10,7 +10,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* color: #ffff; */
     background: linear-gradient(135deg, #192645, #312e81, #2563eb);
     z-index: -1
 }
@@ -18,9 +17,8 @@ body {
 .quiz_body {
     width: 100%;
     max-width: 500px;
-    /* background: linear-gradient(135deg, #2c4072, #36338f, #073aa9); */
     background: rgba(255, 255, 255, .12);
-    /* backdrop-filter: blur(15px); */
+    backdrop-filter: blur(15px);
     border: 1px solid rgba(255, 255, 255, .2);
     border-radius: 25px;
     padding: 35px;
@@ -38,9 +36,9 @@ body {
     line-height: 1.4;
     text-align: center;
     margin-bottom: 30px;
-    color: #fff;
+    color: #dfdada;
     font-size: 16px;
-    font-weight: normal;
+    font-weight: 400;
 }
 
 .form_group {
@@ -91,6 +89,7 @@ select {
     justify-content: space-between;
     font-weight: 700;
     font-size: 18px;
+    color: white;
 }
 
 #timer {
@@ -112,7 +111,13 @@ select {
     transition: 0.4s
 }
 
-.answer {
+#question {
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 20px;
+}
+
+.answers {
     display: grid;
     gap: 15px;
 }
@@ -135,11 +140,11 @@ select {
 }
 
 .correct {
-    background: rgb(13, 212, 13);
+    background: rgba(1, 182, 1, 0.925);
 }
 
 .wrong {
-    background: rgb(248, 17, 17);
+    background: rgba(249, 24, 24, 0.908);
 }
 
 .disabled {
@@ -166,13 +171,14 @@ select {
     text-align: center;
     font-size: 50px;
     font-weight: 700;
-    color: rgb(237, 210, 3)
+    color: rgb(237, 210, 3);
+    margin: 20px 0;
 }
 
-.message {
+#message {
     text-align: center;
-    margin-top: 15px;
     font-size: 20px;
+    color: white;
 }
 
 .hidden {
@@ -182,4 +188,6 @@ select {
 h2 {
     text-align: center;
     color: white;
+    margin: 20px 0;
+    font-size: 22px;
 }
